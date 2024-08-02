@@ -1,3 +1,33 @@
+# Carbon Footprint Project
+
+## Overview
+The Carbon Footprint Project is an initiative to help users calculate and manage their carbon footprint through a web application built with Spring Boot and Angular. The goal is to provide a tool for tracking vehicle emissions and other activities contributing to one's carbon footprint.
+
+## Features
+- User registration and authentication
+- Add and manage vehicles
+- Track vehicle fuel consumption and emissions
+- Calculate carbon footprint
+- Display data in an intuitive user interface
+
+## Technologies Used
+- **Backend:** Spring Boot, Java
+- **Frontend:** Angular, TypeScript
+- **Database:** MySQL
+- **Version Control:** Git
+- **Build Tools:** Maven
+- **Deployment:** Docker, Kubernetes
+
+## Installation
+
+### Prerequisites
+- Java 8 or higher
+- Node.js and npm
+- Angular CLI
+- MySQL
+
+
+
 # GHFrontEnd
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
