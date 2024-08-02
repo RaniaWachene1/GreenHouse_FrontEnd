@@ -3,16 +3,14 @@ import { Vehicle } from '../../../models/vehicle.model';
 import { AuthService } from '../../../services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { VehicleService } from '../../../services/vehicle.service';
-import { VehiclesAddComponent } from '../vehicles-add/vehicles-add.component';
-import { EditVehicleComponent } from '../edit-vehicle/edit-vehicle.component';
 import { VehicleUsageModelComponent } from '../vehicle-usage-model/vehicle-usage-model.component';
 
 @Component({
   selector: 'app-vehicle-usage',
   templateUrl: './vehicle-usage.component.html',
-  styleUrl: './vehicle-usage.component.css'
+  styleUrls: ['./vehicle-usage.component.css']
 })
-export class VehicleUsageComponent  implements OnInit {
+export class VehicleUsageComponent implements OnInit {
   vehicles: Vehicle[] = [];
   searchText = '';
   userId: number | undefined;
@@ -40,8 +38,6 @@ export class VehicleUsageComponent  implements OnInit {
     }
   }
 
-
-
   getVehicleIcon(vehicle: Vehicle): string {
     if (vehicle.carType) {
       return 'fas fa-car'; // Font Awesome car icon
@@ -55,6 +51,7 @@ export class VehicleUsageComponent  implements OnInit {
       return 'fas fa-car-side'; // Default Font Awesome car icon
     }
   }
+
   addFuelConsumption(vehicle: Vehicle): void {
     const dialogRef = this.dialog.open(VehicleUsageModelComponent, {
       width: '600px',
@@ -64,8 +61,21 @@ export class VehicleUsageComponent  implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Handle the fuel consumption data here
-        console.log('Fuel consumption data:', result);
+        // Update the vehicle with the new fuel consumption data
+        vehicle.fuelType = result.fuelType;
+        vehicle.fuelConsumption = result.fuelConsumption;
+
+        if (vehicle.idVehicle !== undefined) {
+          // Save the updated vehicle to the backend
+          this.vehicleService.updateVehicle(vehicle, vehicle.idVehicle).subscribe(() => {
+            console.log('Vehicle updated successfully');
+            this.loadUserVehicles(); // Reload vehicles to reflect changes
+          }, error => {
+            console.error('Error updating vehicle:', error);
+          });
+        } else {
+          console.error('Vehicle ID is undefined');
+        }
       }
     });
   }
