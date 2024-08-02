@@ -1,0 +1,93 @@
+.chart-container {
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    margin: 0 auto; /* Center the chart */
+  }
+  
+  #footprintChart {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .footprint-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header h1 {
+    font-weight: bold;
+    color: black;
+    text-align: center;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .total-emissions {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .chart {
+    flex: 1;
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .scopes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .scope-item {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .scope-label {
+    font-weight: bold;
+  }
+  
+  .scope-item h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+  }
+  .scopes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .scope-item {
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    flex: 1;
+  }
+  
+  .scope-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    right: 0;
+    width: 1px;
+    height: 50%;
+    background-color: #f7f7f7; /* Color of the vertical line */
+  }
+  
+  .scope-label {
+    font-weight: bold;
+  }
+  
+ 
+  
+  

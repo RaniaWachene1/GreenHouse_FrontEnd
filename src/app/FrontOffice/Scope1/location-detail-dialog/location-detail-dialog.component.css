@@ -1,0 +1,114 @@
+.dialog-title {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 24px;
+  }
+  
+  .close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: green;
+    border: none;
+    background: none;
+  }
+  
+  .profile-section {
+    display: flex;
+  }
+  
+  .profile-menu {
+    width: 200px;
+    border-right: 1px solid #ccc;
+    padding-right: 20px;
+  }
+  
+  .profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #53a92c;
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .user-name {
+    font-weight: bold;
+  }
+  
+  .user-email {
+    font-size: 14px;
+    color: #53a92c;
+  }
+  
+  .profile-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .profile-menu-item {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .profile-menu-item.active,
+  .profile-menu-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .profile-details {
+    flex-grow: 1;
+    padding-left: 20px;
+  }
+  
+  .profile-details h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .editable-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  mat-dialog-actions {
+    text-align: right;
+    padding: 10px 0;
+  }
+  
+  mat-dialog-container {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .delete-button {
+    display: block;
+    margin: 15px 0;
+    border: 1px solid #ff0000;
+    color: #ff0000;
+    width: 100%;
+    text-align: center;
+  }
+  

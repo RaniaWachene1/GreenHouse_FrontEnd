@@ -1,0 +1,103 @@
+.container-fluid {
+    padding: 10px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.info-container {
+    width: 100%; /* Set width to 100% to center content */
+    padding-left: 20px;
+    text-align: center; /* Center align the text inside the container */
+}
+
+.location-item {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.location-title {
+    font-size: 44px; /* Bigger font size */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 30px;
+    text-align: center; /* Centered text */
+}
+
+.rounded-btn {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 auto 20px auto; /* Centers the button and adds space below it */
+    display: block; /* Ensures the button is centered */
+    text-align: center; /* Centers the button text and icon */
+}
+
+.rounded-btn i {
+    margin-right: 5px; /* Adds space between the icon and text */
+}
+
+.location-item h5 {
+    cursor: pointer;
+    color: black; /* Set the color to black */
+    font-weight: bold;
+}
+
+.location-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.location-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    width: calc(33.333% - 20px); /* Adjust width to fit 3 items per row */
+    box-sizing: border-box;
+}
+
+.location-header {
+    display: flex;
+    align-items: center;
+}
+
+.location-name {
+    cursor: pointer;
+    color: black; /* Set the color to black */
+    font-weight: bold; /* Make the text bold */
+    flex-grow: 1;
+}
+
+.location-icon {
+    cursor: pointer;
+    color: #3fb54f; /* Icon color */
+    margin-left: 10px;
+}
+
+.location-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.location-details > div {
+    margin: 5px 0;
+}
+
+.mat-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.bold-black-text {
+    font-weight: bold;
+    color: black;
+    margin-right: 10px;
+}

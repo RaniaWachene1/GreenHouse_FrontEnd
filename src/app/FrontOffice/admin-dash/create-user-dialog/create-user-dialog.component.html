@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Create User</h1>
+<div mat-dialog-content>
+  <form [formGroup]="createUserForm" class="form-layout">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="First Name" formControlName="firstName">
+      <mat-error *ngIf="createUserForm.get('firstName')?.invalid">{{ getErrorMessage('firstName') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Last Name" formControlName="lastName">
+      <mat-error *ngIf="createUserForm.get('lastName')?.invalid">{{ getErrorMessage('lastName') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email">
+      <mat-error *ngIf="createUserForm.get('email')?.invalid">{{ getErrorMessage('email') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" formControlName="password" type="password">
+      <mat-error *ngIf="createUserForm.get('password')?.invalid">{{ getErrorMessage('password') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Company Name</mat-label>
+      <input matInput placeholder="Company Name" formControlName="companyName">
+      <mat-error *ngIf="createUserForm.get('companyName')?.invalid">{{ getErrorMessage('companyName') }}</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()" [disabled]="createUserForm.invalid" class="btn-green">Create</button>
+</div>

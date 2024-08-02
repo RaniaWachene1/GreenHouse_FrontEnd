@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Edit User</h1>
+<div mat-dialog-content class="edit-dialog-content">
+  <form [formGroup]="editUserForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="First Name" formControlName="firstName">
+      <mat-error *ngIf="editUserForm.get('firstName')?.invalid">{{ getErrorMessage('firstName') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Last Name" formControlName="lastName">
+      <mat-error *ngIf="editUserForm.get('lastName')?.invalid">{{ getErrorMessage('lastName') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email">
+      <mat-error *ngIf="editUserForm.get('email')?.invalid">{{ getErrorMessage('email') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Company Name</mat-label>
+      <input matInput placeholder="Company Name" formControlName="companyName">
+      <mat-error *ngIf="editUserForm.get('companyName')?.invalid">{{ getErrorMessage('companyName') }}</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()" [disabled]="editUserForm.invalid" class="btn-green">Save</button>
+</div>

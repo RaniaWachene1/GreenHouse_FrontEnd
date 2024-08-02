@@ -1,0 +1,55 @@
+<!-- add-company-info-dialog.component.html -->
+<h1 mat-dialog-title class="dialog-title">Add Company Information</h1>
+<div mat-dialog-content>
+  <form [formGroup]="companyInfoForm">
+    <div class="flex-container">
+      <mat-form-field appearance="outline" class="revenue-field">
+        <mat-label>Revenue</mat-label>
+        <input matInput formControlName="revenue" type="number">
+        <mat-error>{{ getErrorMessage('revenue') }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="currency-field">
+        <mat-label>Currency</mat-label>
+        <mat-select formControlName="currency">
+          <mat-option *ngFor="let currency of currencies" [value]="currency">
+            {{ currency }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Headquarters</mat-label>
+      <mat-select formControlName="headquarters" (openedChange)="searchTerm = ''; filteredCountries = countries;">
+        <mat-option>
+          <input matInput placeholder="Search country" (input)="onSearchChange($event)">
+        </mat-option>
+        <mat-option *ngFor="let country of filteredCountries" [value]="country.name">
+          {{ country.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error>{{ getErrorMessage('headquarters') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Sector</mat-label>
+      <mat-select formControlName="sector">
+        <mat-option *ngFor="let sector of sectors" [value]="sector">
+          {{ sector }}
+        </mat-option>
+      </mat-select>
+      <mat-error>{{ getErrorMessage('sector') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Industry</mat-label>
+      <mat-select formControlName="industry">
+        <mat-option *ngFor="let industry of industries" [value]="industry">
+          {{ industry }}
+        </mat-option>
+      </mat-select>
+      <mat-error>{{ getErrorMessage('industry') }}</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()" [disabled]="!companyInfoForm.valid">Save</button>
+</div>

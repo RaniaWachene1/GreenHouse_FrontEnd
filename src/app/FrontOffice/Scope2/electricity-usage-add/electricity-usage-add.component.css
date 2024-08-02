@@ -1,0 +1,42 @@
+.modal-title {
+    text-align: center;
+    margin-bottom: 25px; /* Add space between the title and the content */
+  }
+  
+  mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .consumption-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center; /* Center align the input fields */
+    margin-top: 20px; /* Add more space between the title and the fields */
+  }
+  
+  .consumption-input mat-form-field {
+    margin: 0 8px; /* Add some space between the fields */
+  }
+  
+  .gas-input {
+    flex: 2; /* Make this field larger */
+  }
+  
+  .unit-select {
+    flex: 1; /* Make this field smaller */
+    min-width: 120px;
+  }
+  
+  .larger-label {
+    font-size: 1.2em; /* Make the label larger */
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  

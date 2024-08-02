@@ -1,0 +1,36 @@
+.mat-dialog-container {
+    width: 800px;
+    height: 600px;
+    max-width: 900vw;  
+    max-height: 900vh;
+  }
+  
+  .edit-dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+  }
+  .btn-green {
+    background-color: #5faf1f; /* Green background */
+    color: white; /* White text */
+  }
+  
+  .btn-green:hover {
+    background-color: #5faf1f; /* Darker green on hover */
+  }

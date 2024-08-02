@@ -1,0 +1,27 @@
+/* Custom styles for sidebar */
+.bg-gradient-primary {
+    background-color: white !important;
+    border: 1px solid black;
+}
+
+.navbar-nav .nav-link, .sidebar-heading, .collapse-item, .sidebar-brand-text {
+    color: black !important;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    color: #53a92c !important;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-divider {
+    border-top: 1px solid black;
+}
+
+.sidebar-card {
+    border-top: 1px solid black;
+}
+
+/* Sidebar brand icon color */
+.sidebar-brand-icon i {
+    color: #53a92c;
+}

@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Add natural gas consumption data.</h2>
+<div mat-dialog-content>
+
+  <div class="consumption-input">
+    <mat-form-field appearance="outline" class="gas-input">
+      <mat-label class="larger-label">How much energy did this location use in 2023?</mat-label>
+      <input matInput [(ngModel)]="naturalGasConsumption" type="number">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="unit-select">
+      <mat-label>Unit</mat-label>
+      <mat-select>
+        <mat-option value="thm">kWH</mat-option>
+        <!-- Add other units if needed -->
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+</div>

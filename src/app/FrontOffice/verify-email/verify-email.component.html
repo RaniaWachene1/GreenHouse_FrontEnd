@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="/assets/auth/css/opensans-font.css">
+    <link rel="stylesheet" type="text/css" href="/assets/auth/fonts/line-awesome/css/line-awesome.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="/assets/auth/css/style.css"/>
+    <!-- Jquery -->
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+   
+</head>
+<body class="form-v4">
+    <div class="page-content">
+       
+            <div class="card">
+                <div class="card-body">
+                  
+                    <h2 class="form-title">  Verify Email </h2>
+
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="code">Verification Code</label>
+                            <input type="text" class="form-control" id="code" [(ngModel)]="code" name="code" required>
+                        </div>
+                        <div class="button-container">
+                            <button type="submit" class="btn btn-green">Verify</button>
+                        </div>                    </form>
+                    <div *ngIf="isVerified" class="alert alert-success mt-3">
+                        Email verified successfully!
+                    </div>
+                    <div *ngIf="isVerificationFailed" class="alert alert-danger mt-3">
+                        {{ errorMessage }}
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</body>
+</html>

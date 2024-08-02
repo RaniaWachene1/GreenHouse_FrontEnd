@@ -1,0 +1,17 @@
+.form-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  .btn-green {
+    background-color: #5faf1f; /* Green background */
+    color: white; /* White text */
+  }
+  
+  .btn-green:hover {
+    background-color: #5faf1f; /* Darker green on hover */
+  }
+  

@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Add Fuel Consumption Data</h2>
+<div mat-dialog-content>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>What kind of fuel does {{ data.vehicle.name }} use?</mat-label>
+    <mat-select [(ngModel)]="fuelType">
+      <mat-option *ngFor="let unit of units" [value]="unit">{{ unit }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>How much fuel did {{ data.vehicle.name }} use in 2023?</mat-label>
+    <input matInput [(ngModel)]="fuelConsumption" type="number">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Unit</mat-label>
+    <mat-select [(ngModel)]="fuelType">
+      <mat-option value="liters">liters</mat-option>
+      <mat-option value="gallons">gallons</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+</div>

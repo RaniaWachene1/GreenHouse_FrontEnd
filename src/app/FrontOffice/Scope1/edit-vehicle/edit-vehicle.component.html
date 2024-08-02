@@ -1,0 +1,104 @@
+<div class="dialog-header">
+    <h1 mat-dialog-title class="dialog-title">Edit Vehicle</h1>
+    <button mat-icon-button class="close-button" (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form>
+      <!-- Vehicle Name/ID -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Vehicle Name/ID</mat-label>
+        <input matInput [(ngModel)]="vehicle.name" name="vehicleName" required>
+        <mat-error>This is a required field</mat-error>
+      </mat-form-field>
+  
+      <!-- Category Selection -->
+      <p>Select the type of vehicle:</p>
+      <mat-radio-group [(ngModel)]="selectedCategory" name="category" class="radio-group">
+        <mat-radio-button value="car">Car</mat-radio-button>
+        <mat-radio-button value="hgv">Heavy Goods Vehicle</mat-radio-button>
+        <mat-radio-button value="motorbike">Motorbike</mat-radio-button>
+        <mat-radio-button value="van">Van</mat-radio-button>
+      </mat-radio-group>
+  
+      <!-- Conditional Fields Based on Category -->
+      <div *ngIf="selectedCategory === 'car'">
+        <p>What kind of car is this?</p>
+        <mat-radio-group [(ngModel)]="vehicle.carType" name="carType" class="radio-group">
+          <mat-radio-button value="average">Car-Average</mat-radio-button>
+          <mat-radio-button value="dual-purpose">Cars (by market segment)-Dual purpose 4X4</mat-radio-button>
+          <mat-radio-button value="executive">Cars (by market segment)-Executive</mat-radio-button>
+          <!-- Add other car options here -->
+        </mat-radio-group>
+      </div>
+  
+      <div *ngIf="selectedCategory === 'hgv'">
+        <p>What kind of Heavy Goods Vehicle is this?</p>
+        <mat-radio-group [(ngModel)]="vehicle.hgvType" name="hgvType" class="radio-group">
+          <mat-radio-button value="all-artics">Heavy Goods Vehicle (all diesel)-All artics</mat-radio-button>
+          <mat-radio-button value="all-rigids">Heavy Goods Vehicle (all diesel)-All rigids</mat-radio-button>
+          <mat-radio-button value="articulated-33t">Heavy Goods Vehicle (all diesel)-Articulated (>3.5 - 33t)</mat-radio-button>
+          <!-- Add other HGV options here -->
+        </mat-radio-group>
+      </div>
+  
+      <div *ngIf="selectedCategory === 'motorbike'">
+        <p>What kind of Motorbike is this?</p>
+        <mat-radio-group [(ngModel)]="vehicle.motorbikeType" name="motorbikeType" class="radio-group">
+          <mat-radio-button value="average">Motorbike-Average</mat-radio-button>
+          <mat-radio-button value="large">Motorbike-Large</mat-radio-button>
+          <mat-radio-button value="medium">Motorbike-Medium</mat-radio-button>
+          <mat-radio-button value="small">Motorbike-Small</mat-radio-button>
+        </mat-radio-group>
+      </div>
+  
+      <div *ngIf="selectedCategory === 'van'">
+        <p>What kind of Van is this?</p>
+        <mat-radio-group [(ngModel)]="vehicle.vanType" name="vanType" class="radio-group">
+          <mat-radio-button value="average">Van-Average</mat-radio-button>
+          <mat-radio-button value="class-i">Van-Class I (up to 1.305 tonnes)</mat-radio-button>
+          <mat-radio-button value="class-ii">Van-Class II (1.305 to 1.74 tonnes)</mat-radio-button>
+          <mat-radio-button value="class-iii">Van-Class III (1.74 to 3.5 tonnes)</mat-radio-button>
+        </mat-radio-group>
+      </div>
+  
+      <!-- Common Fields -->
+      <div class="flex-container">
+        <mat-form-field appearance="outline" class="flex-item">
+          <mat-label>Year (optional)</mat-label>
+          <mat-select [(ngModel)]="vehicle.year" name="year">
+            <mat-option *ngFor="let year of years" [value]="year">{{year}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="flex-item">
+          <mat-label>Make (optional)</mat-label>
+          <mat-select [(ngModel)]="vehicle.make" name="make">
+            <mat-option *ngFor="let make of makes" [value]="make">{{make}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="flex-item">
+          <mat-label>Model (optional)</mat-label>
+          <mat-select [(ngModel)]="vehicle.model" name="model">
+            <mat-option *ngFor="let model of models" [value]="model">{{model}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <!-- Usage Data Selection -->
+      <p>What usage data do you have for this vehicle?</p>
+      <mat-radio-group [(ngModel)]="vehicle.usageData" name="usageData" class="radio-group">
+        <mat-radio-button value="distance">Vehicle Usage (Distance)</mat-radio-button>
+        <mat-radio-button value="fuel">Vehicle Usage (Fuel)</mat-radio-button>
+      </mat-radio-group>
+  
+  
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onClose()">Cancel</button>
+    <button mat-button (click)="saveChanges()">Save</button>
+  </div>
+  

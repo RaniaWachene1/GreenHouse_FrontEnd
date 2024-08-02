@@ -1,0 +1,83 @@
+<h1 mat-dialog-title class="dialog-title">Location Details</h1>
+<button mat-icon-button class="close-button" (click)="onClose()">
+  <mat-icon>close</mat-icon>
+</button>
+<div mat-dialog-content>
+  <div class="profile-section">
+    <div class="profile-menu">
+      <div class="profile-info">
+        <div #mapContainer class="map-container"></div>
+        <div class="location-name">{{ data.location.nameLocation }}</div>
+      </div>
+      <ul class="profile-menu-list">
+        <li class="profile-menu-item" [class.active]="activeSection === 'details'" (click)="setActiveSection('details')">Location Details</li>
+        <li class="profile-menu-item" [class.active]="activeSection === 'settings'" (click)="setActiveSection('settings')">Settings</li>
+      </ul>
+      <button mat-button color="warn" class="delete-button" (click)="confirmDelete()">Delete</button>
+    </div>
+    <div class="profile-details">
+      <ng-container *ngIf="activeSection === 'details'">
+        <!-- Location Details -->
+        <div class="profile-detail-item">
+          <p><strong>Name</strong></p>
+          <span *ngIf="!editing['nameLocation']">{{ data.location.nameLocation }}</span>
+          <input *ngIf="editing['nameLocation']" [(ngModel)]="data.location.nameLocation">
+          <button mat-icon-button (click)="toggleEdit('nameLocation')">
+            <mat-icon>{{ editing['nameLocation'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Address</strong></p>
+          <span *ngIf="!editing['addressLocation']">{{ data.location.addressLocation }}</span>
+          <input *ngIf="editing['addressLocation']" [(ngModel)]="data.location.addressLocation">
+          <button mat-icon-button (click)="toggleEdit('addressLocation')">
+            <mat-icon>{{ editing['addressLocation'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>City</strong></p>
+          <span *ngIf="!editing['city']">{{ data.location.city }}</span>
+          <input *ngIf="editing['city']" [(ngModel)]="data.location.city">
+          <button mat-icon-button (click)="toggleEdit('city')">
+            <mat-icon>{{ editing['city'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>State</strong></p>
+          <span *ngIf="!editing['state']">{{ data.location.state }}</span>
+          <input *ngIf="editing['state']" [(ngModel)]="data.location.state">
+          <button mat-icon-button (click)="toggleEdit('state')">
+            <mat-icon>{{ editing['state'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Zip Code</strong></p>
+          <span *ngIf="!editing['zip']">{{ data.location.zip }}</span>
+          <input *ngIf="editing['zip']" type="number" [(ngModel)]="data.location.zip">
+          <button mat-icon-button (click)="toggleEdit('zip')">
+            <mat-icon>{{ editing['zip'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Country</strong></p>
+          <span *ngIf="!editing['country']">{{ data.location.country }}</span>
+          <input *ngIf="editing['country']" [(ngModel)]="data.location.country">
+          <button mat-icon-button (click)="toggleEdit('country')">
+            <mat-icon>{{ editing['country'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Uses Natural Gas</strong></p>
+          <mat-checkbox *ngIf="editing['usesNaturalGas']" [(ngModel)]="data.location.usesNaturalGas"></mat-checkbox>
+          <span *ngIf="!editing['usesNaturalGas']">{{ data.location.usesNaturalGas ? 'Yes' : 'No' }}</span>
+          <button mat-icon-button (click)="toggleEdit('usesNaturalGas')">
+            <mat-icon>{{ editing['usesNaturalGas'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()">Close</button>
+</div>

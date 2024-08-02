@@ -1,0 +1,105 @@
+<h1 mat-dialog-title class="dialog-title">My Account</h1>
+<button mat-icon-button class="close-button" (click)="onClose()">
+  <mat-icon>close</mat-icon>
+</button>
+<div mat-dialog-content>
+  <div class="profile-section">
+    <div class="profile-menu">
+      <div class="profile-info">
+        <div class="avatar">{{ data.user.firstName[0] }}{{ data.user.lastName[0] }}</div>
+        <div class="user-name">{{ data.user.firstName }} {{ data.user.lastName }}</div>
+        <div class="user-email">{{ data.user.email }}</div>
+      </div>
+      <ul class="profile-menu-list">
+        <li class="profile-menu-item" [class.active]="activeSection === 'account'" (click)="setActiveSection('account')">My account</li>
+        <li class="profile-menu-item" [class.active]="activeSection === 'company'" (click)="setActiveSection('company')">Company information</li>
+        <li class="profile-menu-item">Pro+ Upgrades</li>
+        <li class="profile-menu-item">Billing</li>
+      </ul>
+    </div>
+    <div class="profile-details">
+      <ng-container *ngIf="activeSection === 'account'">
+        <!-- Account Information -->
+        <div class="profile-detail-item">
+          <p><strong>First Name</strong></p>
+          <span *ngIf="!editing['firstName']">{{ data.user.firstName }}</span>
+          <input *ngIf="editing['firstName']" [(ngModel)]="data.user.firstName">
+          <button mat-icon-button (click)="toggleEdit('firstName')">
+            <mat-icon>{{ editing['firstName'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Last Name</strong></p>
+          <span *ngIf="!editing['lastName']">{{ data.user.lastName }}</span>
+          <input *ngIf="editing['lastName']" [(ngModel)]="data.user.lastName">
+          <button mat-icon-button (click)="toggleEdit('lastName')">
+            <mat-icon>{{ editing['lastName'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Email</strong></p>
+          <span *ngIf="!editing['email']">{{ data.user.email }}</span>
+          <input *ngIf="editing['email']" [(ngModel)]="data.user.email">
+          <button mat-icon-button (click)="toggleEdit('email')">
+            <mat-icon>{{ editing['email'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="activeSection === 'company'">
+        <!-- Company Information -->
+        <div class="profile-detail-item">
+          <p><strong>Company Name</strong></p>
+          <span *ngIf="!editing['companyName']">{{ data.user.companyName }}</span>
+          <input *ngIf="editing['companyName']" [(ngModel)]="data.user.companyName">
+          <button mat-icon-button (click)="toggleEdit('companyName')">
+            <mat-icon>{{ editing['companyName'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Revenue</strong></p>
+          <span *ngIf="!editing['revenue']">{{ data.user.revenue }}</span>
+          <input *ngIf="editing['revenue']" type="number" [(ngModel)]="data.user.revenue">
+          <button mat-icon-button (click)="toggleEdit('revenue')">
+            <mat-icon>{{ editing['revenue'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Headquarters</strong></p>
+          <span *ngIf="!editing['headquarters']">{{ data.user.headquarters }}</span>
+          <input *ngIf="editing['headquarters']" [(ngModel)]="data.user.headquarters">
+          <button mat-icon-button (click)="toggleEdit('headquarters')">
+            <mat-icon>{{ editing['headquarters'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Currency</strong></p>
+          <span *ngIf="!editing['currency']">{{ data.user.currency }}</span>
+          <input *ngIf="editing['currency']" [(ngModel)]="data.user.currency">
+          <button mat-icon-button (click)="toggleEdit('currency')">
+            <mat-icon>{{ editing['currency'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Sector</strong></p>
+          <span *ngIf="!editing['sector']">{{ data.user.sector }}</span>
+          <input *ngIf="editing['sector']" [(ngModel)]="data.user.sector">
+          <button mat-icon-button (click)="toggleEdit('sector')">
+            <mat-icon>{{ editing['sector'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+        <div class="profile-detail-item">
+          <p><strong>Industry</strong></p>
+          <span *ngIf="!editing['industry']">{{ data.user.industry }}</span>
+          <input *ngIf="editing['industry']" [(ngModel)]="data.user.industry">
+          <button mat-icon-button (click)="toggleEdit('industry')">
+            <mat-icon>{{ editing['industry'] ? 'save' : 'edit' }}</mat-icon>
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()">Close</button>
+</div>

@@ -1,0 +1,58 @@
+/* add-company-info-dialog.component.css */
+.dialog-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+  }
+  .custom-dialog-container .mat-dialog-container {
+    border: 2px solid black;
+    border-radius: 8px; /* Optional: for rounded corners */
+  }
+  .custom-dialog-container .mat-dialog-container {
+    border: 2px solid black !important;
+    border-radius: 8px !important; /* Optional: for rounded corners */
+    padding: 16px !important; /* Optional: for additional spacing inside the dialog */
+    box-shadow: none !important; /* Remove default shadow if necessary */
+    background-color: white !important; /* Ensure background color is applied */
+  }
+  
+  .flex-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 15px; 
+    padding-top: 20px;
+  }
+  
+  .revenue-field {
+    flex: 1;
+    padding: 0 10px; /* Adds space on the left and right */
+  }
+  
+  .currency-field {
+    flex: 0 0 150px; /* Adjust the width of the currency selector as needed */
+    padding: 0 10px; /* Adds space on the left and right */
+  }
+  
+  .full-width {
+    width: 100%;
+    padding: 0 20px; /* Adds space on the left and right */
+    margin-bottom: 1rem; /* Adds space between elements */
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: green; /* Outline color */
+    border-color: green; /* Border color */
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: green; /* Thick outline color */
+    border-color: green; /* Thick border color */
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  

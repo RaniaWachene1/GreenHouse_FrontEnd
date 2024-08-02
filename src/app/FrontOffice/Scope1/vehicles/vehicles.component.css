@@ -1,0 +1,58 @@
+.black-title {
+    color: black;
+    font-weight: bold;
+
+  }
+  .vehicle-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .vehicle-item {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .vehicle-header {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* space between icon and name */
+  }
+  
+  .vehicle-icon {
+    width: 40px; /* adjust size as needed */
+    height: 40px; /* adjust size as needed */
+    font-size: 24px;
+  }
+  
+  .vehicle-divider {
+    margin: 10px 0;
+  }
+  
+  .vehicle-details {
+    margin-bottom: 10px;
+  }
+  
+  .vehicle-footer {
+    display: flex;
+    justify-content: center;
+  }
+  .vehicle-name {
+    color: black; /* Set text color to black */
+    font-weight: bold; /* Make text bold */
+  }
+.vehicle-detail {
+  color: black; /* Set text color to black */
+}
+  .vehicle-footer button {
+    margin-top: 10px;
+  }
+  
